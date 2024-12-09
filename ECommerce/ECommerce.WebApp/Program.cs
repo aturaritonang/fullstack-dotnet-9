@@ -1,10 +1,15 @@
 using ECommerce.WebApp;
+using ECommerce.WebApp.Models.Data;
+using ECommerce.WebApp.Models.View;
+using ECommerce.WebApp.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 builder.Services.AddDomainContext(builder.Configuration);
+
+builder.Services.AddScoped<ICategoryRepository<CategoryView, Category>, CategoryRepository>();
 
 var app = builder.Build();
 

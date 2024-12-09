@@ -8,6 +8,8 @@ public class ECommerceDbContext : DbContext
     {
     }
 
+    public DbSet<Category> Categories { get; set; }
+
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Seed();
